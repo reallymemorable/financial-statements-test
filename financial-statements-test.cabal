@@ -1,0 +1,63 @@
+cabal-version:       2.0
+name:                financial-statements-test
+version:             0.0.0
+synopsis:            See README for more info
+description:         See README for more info
+homepage:            https://github.com/reallymemorable/financial-statements-test
+bug-reports:         https://github.com/reallymemorable/financial-statements-test/issues
+license:             MIT
+license-file:        LICENSE
+author:              Christian Desrosiers
+maintainer:          reallymemorable@reallymemorable.com
+copyright:           2019 Christian Desrosiers
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.6.3
+
+source-repository head
+  type:                git
+  location:            https://github.com/reallymemorable/financial-statements-test.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     FinancialStatementsTest
+                       
+
+  build-depends:       base ^>= 4.12.0.0
+                     
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+
+executable financial-statements-test
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base ^>= 4.12.0.0
+                     , financial-statements-test
+                     
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
